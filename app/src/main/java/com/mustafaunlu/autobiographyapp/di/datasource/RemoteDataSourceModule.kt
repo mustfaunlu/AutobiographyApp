@@ -1,7 +1,7 @@
 package com.mustafaunlu.autobiographyapp.di.datasource
 
-import com.mustafaunlu.autobiographyapp.data.datasource.RemoteDataSource
-import com.mustafaunlu.autobiographyapp.data.datasource.RemoteDataSourceImpl
+import com.mustafaunlu.autobiographyapp.data.datasource.remote.RemoteDataSource
+import com.mustafaunlu.autobiographyapp.data.datasource.remote.RemoteDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
