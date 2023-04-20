@@ -9,6 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.mustafaunlu.autobiographyapp.R
 import com.mustafaunlu.autobiographyapp.data.NetworkResponse
+import com.mustafaunlu.autobiographyapp.data.models.Portfolio
+import com.mustafaunlu.autobiographyapp.data.models.Social
 import com.mustafaunlu.autobiographyapp.databinding.FragmentHomeBinding
 import com.mustafaunlu.autobiographyapp.utility.loadImage
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,6 +21,9 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var html: String
+    private lateinit var personAbout: String
+    private lateinit var personSocials: Array<Social>
+    private lateinit var personProjects: Array<Portfolio>
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,16 +37,19 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnContact.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_contactFragment)
+            val action = HomeFragmentDirections.actionHomeFragmentToContactFragment(personSocials)
+            findNavController().navigate(action)
         }
         binding.btnAbout.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_aboutFragment)
+            val action = HomeFragmentDirections.actionHomeFragmentToAboutFragment(personAbout)
+            findNavController().navigate(action)
         }
         binding.btnBlogs.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_blogsFragment)
         }
         binding.btnPortfolio.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_portfolioFragment)
+            val action = HomeFragmentDirections.actionHomeFragmentToPortfolioFragment(personProjects)
+            findNavController().navigate(action)
         }
     }
 
@@ -56,6 +64,9 @@ class HomeFragment : Fragment() {
                         settings.useWideViewPort = true
                         loadData(html, "text/html", "UTF-8")
                     }
+                    personAbout = it.result.about
+                    personSocials = it.result.social
+                    personProjects = it.result.portfolio
                 }
                 NetworkResponse.Loading -> {}
                 is NetworkResponse.Error -> {}

@@ -29,7 +29,6 @@ class HomeViewModel @Inject constructor(private val personRepository: PersonRepo
             personRepository.getPerson().collect { response ->
                 when (response) {
                     is NetworkResponse.Success -> {
-                        Log.i("HomeViewModel", "getPersonData: ${response.result}")
                         _personData.value = response
                     }
                     is NetworkResponse.Error -> {

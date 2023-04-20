@@ -27,12 +27,20 @@
         android:id="@+id/aboutFragment"
         android:name="com.mustafaunlu.autobiographyapp.ui.about.AboutFragment"
         android:label="fragment_about"
-        tools:layout="@layout/fragment_about" />
+        tools:layout="@layout/fragment_about" >
+        <argument
+            android:name="person_about"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/portfolioFragment"
         android:name="com.mustafaunlu.autobiographyapp.ui.portfolio.PortfolioFragment"
         android:label="fragment_portfolio"
-        tools:layout="@layout/fragment_portfolio" />
+        tools:layout="@layout/fragment_portfolio" >
+        <argument
+            android:name="person_project"
+            app:argType="com.mustafaunlu.autobiographyapp.data.models.Portfolio[]" />
+    </fragment>
     <fragment
         android:id="@+id/blogsFragment"
         android:name="com.mustafaunlu.autobiographyapp.ui.blogs.BlogsFragment"
@@ -42,5 +50,9 @@
         android:id="@+id/contactFragment"
         android:name="com.mustafaunlu.autobiographyapp.ui.contact.ContactFragment"
         android:label="fragment_blank"
-        tools:layout="@layout/fragment_contact" />
+        tools:layout="@layout/fragment_contact" >
+        <argument
+            android:name="personSocials"
+            app:argType="com.mustafaunlu.autobiographyapp.data.models.Social[]" />
+    </fragment>
 </navigation>
