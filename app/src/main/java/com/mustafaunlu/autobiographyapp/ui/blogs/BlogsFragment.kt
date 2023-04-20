@@ -22,8 +22,10 @@ class BlogsFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentBlogsBinding.inflate(inflater, container, false)
-        binding.blogsWebview.settings.javaScriptEnabled = true
-        binding.blogsWebview.loadUrl(BLOG_URL)
+        binding.blogsWebview.apply {
+            settings.javaScriptEnabled = true
+            loadUrl(BLOG_URL)
+        }
         return binding.root
     }
 
