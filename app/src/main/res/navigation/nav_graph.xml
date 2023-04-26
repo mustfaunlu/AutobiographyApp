@@ -38,7 +38,7 @@
         android:label="fragment_portfolio"
         tools:layout="@layout/fragment_portfolio" >
         <argument
-            android:name="person_project"
+            android:name="person_projects"
             app:argType="com.mustafaunlu.autobiographyapp.data.models.Portfolio[]" />
     </fragment>
     <fragment
@@ -52,7 +52,7 @@
         android:label="fragment_blank"
         tools:layout="@layout/fragment_contact" >
         <argument
-            android:name="personSocials"
+            android:name="person_socials"
             app:argType="com.mustafaunlu.autobiographyapp.data.models.Social[]" />
     </fragment>
 </navigation>
