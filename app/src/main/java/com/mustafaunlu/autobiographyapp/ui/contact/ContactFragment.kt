@@ -29,7 +29,7 @@ class ContactFragment : Fragment() {
         binding.apply {
             val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
             contactRecyclerView.layoutManager = layoutManager
-            val adapter = ContactAdapter(args.personSocials)
+            val adapter = ContactAdapter(args.personSocials.toList())
             contactRecyclerView.adapter = adapter
         }
     }

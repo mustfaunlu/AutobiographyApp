@@ -22,8 +22,8 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var html: String
     private lateinit var personAbout: String
-    private lateinit var personSocials: Array<Social>
-    private lateinit var personProjects: Array<Portfolio>
+    private lateinit var personSocials: List<Social>
+    private lateinit var personProjects: List<Portfolio>
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnContact.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToContactFragment(personSocials)
+            val action = HomeFragmentDirections.actionHomeFragmentToContactFragment(personSocials.toTypedArray())
             findNavController().navigate(action)
         }
         binding.btnAbout.setOnClickListener {
@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_blogsFragment)
         }
         binding.btnPortfolio.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToPortfolioFragment(personProjects)
+            val action = HomeFragmentDirections.actionHomeFragmentToPortfolioFragment(personProjects.toTypedArray())
             findNavController().navigate(action)
         }
     }
