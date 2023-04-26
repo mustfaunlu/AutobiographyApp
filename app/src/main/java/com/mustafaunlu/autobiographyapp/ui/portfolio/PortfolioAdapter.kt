@@ -7,7 +7,7 @@ import com.mustafaunlu.autobiographyapp.data.models.Portfolio
 import com.mustafaunlu.autobiographyapp.databinding.PortfolioItemBinding
 import com.mustafaunlu.autobiographyapp.utility.loadImage
 
-class PortfolioAdapter(private val projectList: Array<Portfolio>) : RecyclerView.Adapter<PortfolioViewHolder>() {
+class PortfolioAdapter(private val projectList: List<Portfolio>) : RecyclerView.Adapter<PortfolioViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PortfolioViewHolder {
         val view = PortfolioItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PortfolioViewHolder(view)

@@ -27,8 +27,9 @@ class PortfolioFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.apply {
-            val adapter = PortfolioAdapter(args.personProject)
+            val adapter = PortfolioAdapter(args.personProjects.toList())
             rvPortfolio.adapter = adapter
         }
     }

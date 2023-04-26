@@ -1,17 +1,15 @@
 package com.mustafaunlu.autobiographyapp.data.models
 
 import android.os.Parcelable
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
-@JsonClass(generateAdapter = true)
 @Parcelize
 data class Portfolio(
-    @Json(name = "description")
+    @SerializedName("description")
     val description: String,
-    @Json(name = "image")
+    @SerializedName("image")
     val image: String,
-    @Json(name = "title")
+    @SerializedName("title")
     val title: String,
 ) : Parcelable
