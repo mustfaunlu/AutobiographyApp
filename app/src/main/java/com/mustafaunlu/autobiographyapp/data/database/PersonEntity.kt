@@ -15,7 +15,7 @@ data class PersonEntity(
     val image: String,
     val job: String,
     val name: String,
-    val portfolio: Array<Portfolio>,
-    val social: Array<Social>,
+    val portfolio: List<Portfolio>,
+    val social: List<Social>,
     val surname: String,
 )
