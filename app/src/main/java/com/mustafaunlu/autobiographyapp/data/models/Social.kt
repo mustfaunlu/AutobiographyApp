@@ -1,14 +1,15 @@
 package com.mustafaunlu.autobiographyapp.data.models
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
-@JsonClass(generateAdapter = true)
+@Parcelize
 data class Social(
-    @Json(name = "image")
+    @SerializedName("image")
     val image: String,
-    @Json(name = "link")
+    @SerializedName("link")
     val link: String,
-    @Json(name = "title")
+    @SerializedName("title")
     val title: String,
-)
+) : Parcelable

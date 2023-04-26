@@ -1,28 +1,30 @@
 package com.mustafaunlu.autobiographyapp.data.models
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.RawValue
 
-@JsonClass(generateAdapter = true)
+@Parcelize
 data class Person(
-    @Json(name = "about")
+    @SerializedName("about")
     val about: String,
-    @Json(name = "age")
+    @SerializedName("age")
     val age: Int,
-    @Json(name = "description")
+    @SerializedName("description")
     val description: String,
-    @Json(name = "id")
+    @SerializedName("id")
     val id: Int,
-    @Json(name = "image")
+    @SerializedName("image")
     val image: String,
-    @Json(name = "job")
+    @SerializedName("job")
     val job: String,
-    @Json(name = "name")
+    @SerializedName("name")
     val name: String,
-    @Json(name = "portfolio")
-    val portfolio: List<Portfolio>,
-    @Json(name = "social")
-    val social: List<Social>,
-    @Json(name = "surname")
+    @SerializedName("portfolio")
+    val portfolio: @RawValue List<Portfolio>,
+    @SerializedName("social")
+    val social: @RawValue List<Social>,
+    @SerializedName("surname")
     val surname: String,
-)
+) : Parcelable
