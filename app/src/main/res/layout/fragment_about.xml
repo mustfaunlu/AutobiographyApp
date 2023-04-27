@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.about.AboutFragment">
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    android:layout_gravity="center"
+    app:cardUseCompatPadding="true">
 
-
-    <TextView
-        android:id="@+id/about_title_txt"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Title"
-        app:layout_constraintBottom_toTopOf="@+id/about_description_txt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/about_description_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Description "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_title_txt" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Başlık kısmı -->
+        <TextView
+            android:id="@+id/about_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hakkımda"
+            android:textSize="32sp"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Açıklama kısmı -->
+        <TextView
+            android:id="@+id/about_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buraya açıklama metninizi yazabilirsiniz."
+            android:textSize="18sp"
+            android:lineSpacingMultiplier="1.2"
+            android:justificationMode="inter_word"
+            android:gravity="center"
+            android:textColor="?attr/colorOnSurface"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

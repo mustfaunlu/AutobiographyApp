@@ -23,8 +23,8 @@ class AboutFragment : Fragment() {
     ): View {
         binding = FragmentAboutBinding.inflate(inflater, container, false)
         binding.apply {
-            aboutTitleTxt.text = "about me"
-            aboutDescriptionTxt.text = args.personAbout
+            aboutTitle.text = "Hakkımda"
+            aboutDescription.text = args.personAbout
         }
         return binding.root
     }
