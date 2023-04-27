@@ -13,17 +13,25 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class PersonRepositoryImpl @Inject constructor(private val remoteDataSource: RemoteDataSource, private val localDataSource: LocalDataSource) : PersonRepository {
+    private var cachedPersonData: PersonEntity? = null
     override fun getPerson(): Flow<NetworkResponse<Person>> =
         flow {
             emit(NetworkResponse.Loading)
-            when (val response = remoteDataSource.getPersonData()) {
-                is NetworkResponse.Error -> {
-                    emit(NetworkResponse.Error(response.exception))
-                }
-                NetworkResponse.Loading -> emit(NetworkResponse.Loading)
-                is NetworkResponse.Success -> {
-                    insertPerson(response.result.toPersonEntity())
-                    emit(NetworkResponse.Success(getPersonFromDatabase().toPerson()))
+            if (cachedPersonData != null) {
+                emit(NetworkResponse.Success(cachedPersonData!!.toPerson()))
+            } else {
+                when (val response = remoteDataSource.getPersonData()) {
+                    is NetworkResponse.Error -> {
+                        emit(NetworkResponse.Error(response.exception))
+                    }
+
+                    is NetworkResponse.Success -> {
+                        insertPerson(response.result.toPersonEntity())
+                        cachedPersonData = getPersonFromDatabase()
+                        emit(NetworkResponse.Success(cachedPersonData!!.toPerson()))
+                    }
+
+                    NetworkResponse.Loading -> emit(NetworkResponse.Loading)
                 }
             }
         }.flowOn(Dispatchers.IO)

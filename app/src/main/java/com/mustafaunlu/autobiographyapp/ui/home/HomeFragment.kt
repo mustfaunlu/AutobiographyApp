@@ -1,5 +1,6 @@
 package com.mustafaunlu.autobiographyapp.ui.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.mustafaunlu.autobiographyapp.R
 import com.mustafaunlu.autobiographyapp.data.NetworkResponse
+import com.mustafaunlu.autobiographyapp.data.models.Person
 import com.mustafaunlu.autobiographyapp.data.models.Portfolio
 import com.mustafaunlu.autobiographyapp.data.models.Social
 import com.mustafaunlu.autobiographyapp.databinding.FragmentHomeBinding
@@ -30,14 +32,18 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        setObserver()
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setObserver()
         binding.btnContact.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToContactFragment(personSocials.toTypedArray())
+            val action =
+                HomeFragmentDirections.actionHomeFragmentToContactFragment(personSocials.toTypedArray())
             findNavController().navigate(action)
         }
         binding.btnAbout.setOnClickListener {
@@ -48,29 +54,39 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_blogsFragment)
         }
         binding.btnPortfolio.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToPortfolioFragment(personProjects.toTypedArray())
+            val action =
+                HomeFragmentDirections.actionHomeFragmentToPortfolioFragment(personProjects.toTypedArray())
             findNavController().navigate(action)
         }
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private fun setObserver() {
         viewModel.personData.observe(viewLifecycleOwner) {
             when (it) {
+                NetworkResponse.Loading -> {}
+
                 is NetworkResponse.Success -> {
                     binding.homePersonImage.loadImage(it.result.image)
                     html = it.result.description
                     binding.descriptionWebview.apply {
                         settings.loadWithOverviewMode = true
                         settings.useWideViewPort = true
+                        settings.javaScriptEnabled = true
+                        setBackgroundColor(0)
                         loadData(html, "text/html", "UTF-8")
                     }
-                    personAbout = it.result.about
-                    personSocials = it.result.social
-                    personProjects = it.result.portfolio
+                    initializeData(it.result)
                 }
-                NetworkResponse.Loading -> {}
+
                 is NetworkResponse.Error -> {}
             }
         }
+    }
+
+    private fun initializeData(data: Person) {
+        personAbout = data.about
+        personSocials = data.social
+        personProjects = data.portfolio
     }
 }

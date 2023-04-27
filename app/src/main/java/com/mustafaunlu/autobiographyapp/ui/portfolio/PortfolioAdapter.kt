@@ -27,9 +27,9 @@ class PortfolioViewHolder(private val binding: PortfolioItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
     fun bind(portfolio: Portfolio) {
         binding.apply {
-            porfolioItemImg.loadImage(portfolio.image)
-            portfolioItemTitle.text = portfolio.title
-            portfolioItemDescription.text = portfolio.description
+            portfolioImg.loadImage(portfolio.image)
+            portfolioTitle.text = portfolio.title
+            portfolioDescription.text = portfolio.description
         }
     }
 }
