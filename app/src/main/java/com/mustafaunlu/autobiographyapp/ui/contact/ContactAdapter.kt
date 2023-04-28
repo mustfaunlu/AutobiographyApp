@@ -25,7 +25,9 @@ class ContactAdapter(private val contactList: List<Social>) : RecyclerView.Adapt
 class ContactViewHolder(private val binding: ContactItemBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind(contact: Social) {
         binding.apply {
-            contactImg.loadImage(contact.image)
+            contactImage.loadImage(contact.image)
+            contactTitle.text = contact.title
+            contactLinkButton.text = contact.link
         }
     }
 }
