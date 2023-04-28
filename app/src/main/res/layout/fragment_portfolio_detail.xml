@@ -7,6 +7,7 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="10dp"
+    android:layout_gravity="center"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
@@ -36,13 +37,21 @@
             android:id="@+id/portfolio_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Hi I am Amiyo, you can see how to ellipse works. Hi I am Amiyo, you can see how to ellipse works."
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:ems="4"
+            tools:text="Description"
             android:textSize="14sp"
             android:layout_margin="10dp"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@android:color/black"
+            android:justificationMode="inter_word"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/portfolio_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Link"
+            android:textSize="14sp"
+            android:layout_margin="10dp"
+            android:textColor="@android:color/black"
             android:justificationMode="inter_word"
             android:padding="8dp" />
 

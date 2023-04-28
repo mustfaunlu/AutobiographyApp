@@ -6,4 +6,6 @@
     <string name="btn_projects_txt">Projects</string>
     <string name="btn_contact_txt">Contact</string>
     <string name="btn_blogs_txt">Blogs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

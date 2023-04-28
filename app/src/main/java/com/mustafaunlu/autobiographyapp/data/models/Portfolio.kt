@@ -12,4 +12,6 @@ data class Portfolio(
     val image: String,
     @SerializedName("title")
     val title: String,
+    @SerializedName("link")
+    val link: String,
 ) : Parcelable

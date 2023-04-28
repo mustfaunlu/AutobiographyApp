@@ -40,6 +40,9 @@
         <argument
             android:name="person_projects"
             app:argType="com.mustafaunlu.autobiographyapp.data.models.Portfolio[]" />
+        <action
+            android:id="@+id/action_portfolioFragment_to_portfolioDetailFragment"
+            app:destination="@id/portfolioDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/blogsFragment"
@@ -54,5 +57,14 @@
         <argument
             android:name="person_socials"
             app:argType="com.mustafaunlu.autobiographyapp.data.models.Social[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/portfolioDetailFragment"
+        android:name="com.mustafaunlu.autobiographyapp.ui.portfolio.PortfolioDetailFragment"
+        android:label="fragment_portfolio_detail"
+        tools:layout="@layout/fragment_portfolio_detail" >
+        <argument
+            android:name="portfolio"
+            app:argType="com.mustafaunlu.autobiographyapp.data.models.Portfolio" />
     </fragment>
 </navigation>

@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.mustafaunlu.autobiographyapp.data.models.Portfolio
 import com.mustafaunlu.autobiographyapp.databinding.FragmentPortfolioBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,8 +29,14 @@ class PortfolioFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            val adapter = PortfolioAdapter(args.personProjects.toList())
+            val adapter = PortfolioAdapter(args.personProjects.toList()) { portfolio ->
+                clickToPortfolioDetail(portfolio)
+            }
             rvPortfolio.adapter = adapter
         }
+    }
+    private fun clickToPortfolioDetail(portfolio: Portfolio) {
+        val action = PortfolioFragmentDirections.actionPortfolioFragmentToPortfolioDetailFragment(portfolio)
+        findNavController().navigate(action)
     }
 }
