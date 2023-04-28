@@ -12,6 +12,12 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
+/**
+ * Repository pattern kullanılarak network'den gelen veriler
+ * database'e kaydediliyor. Eğer daha önce database'e kaydedilmiş
+ * veri yoksa, network'den veri çekiliyor. Database'e kaydedilen
+ * veriler getPerson() fonksiyonu ile viewModel tarafindan kullaniliyor.
+ */
 class PersonRepositoryImpl @Inject constructor(private val remoteDataSource: RemoteDataSource, private val localDataSource: LocalDataSource) : PersonRepository {
     private var cachedPersonData: PersonEntity? = null
     override fun getPerson(): Flow<NetworkResponse<Person>> =
@@ -47,7 +53,7 @@ class PersonRepositoryImpl @Inject constructor(private val remoteDataSource: Rem
         }
 }
 
-// response to database entity model mapper
+// network'den gelen response'u database modeline çevirmek için kullanılan extension function mapperi
 fun Person.toPersonEntity(): PersonEntity {
     return PersonEntity(
         id = this.id,
@@ -63,7 +69,7 @@ fun Person.toPersonEntity(): PersonEntity {
     )
 }
 
-// database entity model to response mapper
+// database'den gelen response'u network modeline çevirmek için kullanılan extension function mapperi
 fun PersonEntity.toPerson(): Person {
     return Person(
         id = this.id,

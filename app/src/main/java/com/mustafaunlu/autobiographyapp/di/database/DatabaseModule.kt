@@ -12,6 +12,10 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 
+/**
+ * Database bagimliliklarini saglamak icin kullanilan
+ * Hilt Dependency Injection kutuphanesi ile olusturulmus modul.
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {

@@ -7,6 +7,7 @@
 
     <style name="radiusContactImg" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">20%</item>
+        <item name="cornerSize">30%</item>
     </style>
+
 </resources>

@@ -4,8 +4,7 @@ import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 /**
- * The [Application] class for Hilt dependency injection library to work.
- * Provides the application context to the Hilt library.
+ * Hilt Kutuphanesi'nin dependencyleri yonetebilmesi için gerekli olan Application sınıfı.
  */
 @HiltAndroidApp
 class AutobiographyApplication : Application()

@@ -10,7 +10,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-private const val BASE_URL = "https://raw.githubusercontent.com/android-turkiye/mock/main/"
+/**
+ * Network islemleri icin gerekli olan Retrofit kutuphanesi bagimliliklarini
+ * saglamak icin kullanilan Hilt Dependency Injection kutuphanesi ile olusturulmus modul.
+ */
+private const val BASE_URL = "https://raw.githubusercontent.com/mustfaunlu/mockdb/main/"
 
 @Module
 @InstallIn(SingletonComponent::class)

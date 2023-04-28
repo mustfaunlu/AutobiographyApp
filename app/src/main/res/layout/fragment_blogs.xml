@@ -5,11 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.blogs.BlogsFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
-
     <WebView
         android:id="@+id/blogs_webview"
         android:layout_width="match_parent"

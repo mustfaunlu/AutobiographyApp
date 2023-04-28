@@ -10,13 +10,20 @@ import com.google.gson.reflect.TypeToken
 import com.mustafaunlu.autobiographyapp.data.models.Portfolio
 import com.mustafaunlu.autobiographyapp.data.models.Social
 import javax.inject.Inject
-import javax.inject.Singleton
 
+/**
+ * Room kutuphanesi kullanilarak olusturulmus veritabani sinifi.
+ */
 @TypeConverters(PortfolioConverter::class, SocialConverter::class)
 @Database(entities = [PersonEntity::class], version = 1, exportSchema = false)
 abstract class PersonDatabase : RoomDatabase() {
     abstract fun personDao(): PersonDao
 }
+
+/**
+ * Room kutuphanesi primitive tipleri destekledigi icin Social ve Portfolio siniflarini
+ * String olarak veritabanina kaydetmek icin kullanilan TypeConverter siniflaridir.
+ */
 
 @ProvidedTypeConverter
 class PortfolioConverter @Inject constructor(private val gson: Gson) {

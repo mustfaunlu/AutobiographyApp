@@ -11,8 +11,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class PortfolioFragment : Fragment() {
-
-    private lateinit var viewModel: PortfolioViewModel
     private lateinit var binding: FragmentPortfolioBinding
     private val args: PortfolioFragmentArgs by navArgs()
 

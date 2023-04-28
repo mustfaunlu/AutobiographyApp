@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            tools:text = "Title"
             android:textSize="18sp"
             android:textStyle="bold"
             android:padding="8dp" />
@@ -35,6 +36,7 @@
             android:id="@+id/portfolio_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            tools:text="Description"
             android:textSize="14sp"
             android:layout_margin="10dp"
             android:textColor="@android:color/darker_gray"

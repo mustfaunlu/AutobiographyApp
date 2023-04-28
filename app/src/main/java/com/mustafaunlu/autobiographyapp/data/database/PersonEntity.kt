@@ -4,7 +4,6 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.mustafaunlu.autobiographyapp.data.models.Portfolio
 import com.mustafaunlu.autobiographyapp.data.models.Social
-
 @Entity(tableName = "person_table")
 data class PersonEntity(
     @PrimaryKey(autoGenerate = true)
