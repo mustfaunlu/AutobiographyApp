@@ -1,7 +1,27 @@
+## Autobiography App
+I have developed an Android application called Autobiography App and I would like to briefly describe its features.
 
-## App video Portrait (Samsung Galaxy Mega 6.3 API 30)
+This application includes an "About Me" section where I provide personal information about myself, my interests, skills, and goals. The "Blogs" page displays the titles and descriptions of my blog posts on Medium, which users can read by clicking on them. The "Projects" page showcases my projects' images, descriptions, technologies used, and GitHub links.
 
-<img width="100" height="100" src="https://user-images.githubusercontent.com/38860392/235319884-fd842419-9614-4caf-b8ae-8daca1d9f29a.mp4" />
+Finally, the last page of the application provides links to my social media accounts, enabling users to connect with me on social media.
+
+Autobiography App was developed using the Kotlin programming language and built using Android Studio. The source code for the project is available on GitHub, allowing any developer to run and modify the project on their own computer.
+
+## Screeshots
+<p align="center">
+<img src="https://github.com/mustfaunlu/AutobiographyApp/assets/38860392/8fb99841-6176-4009-b0f9-1506c4f769fe" width="15%"/>
+<img src="https://github.com/mustfaunlu/AutobiographyApp/assets/38860392/592da785-7292-4e31-a00c-b42c8408c611" width="15%"/>
+<img src="https://github.com/mustfaunlu/AutobiographyApp/assets/38860392/7df45920-cb29-4677-bb35-8dc7e031b811" width="15%"/>
+<img src="https://github.com/mustfaunlu/AutobiographyApp/assets/38860392/fe4a69c9-23e8-41c7-b35f-0223dbccaf82" width="15%"/>
+<img src="https://github.com/mustfaunlu/AutobiographyApp/assets/38860392/c0223811-76f4-44ed-b236-64d0758774a8" width="15%"/>
+<img src="https://github.com/mustfaunlu/AutobiographyApp/assets/38860392/e0a2af32-80b0-4cab-a406-2e8f7f757741" width="15%"/>
+<img src="https://github.com/mustfaunlu/AutobiographyApp/assets/38860392/7df45920-cb29-4677-bb35-8dc7e031b811" width="15%"/>
+<img src="https://github.com/mustfaunlu/AutobiographyApp/assets/38860392/32ba174f-016e-4fde-ba61-f9083c660617" width="15%"/>
+<img src="https://github.com/mustfaunlu/AutobiographyApp/assets/38860392/2a0c8a29-57a2-4ad6-a6c1-b4c4a8a0317c" width="15%"/>
+<img src="https://github.com/mustfaunlu/AutobiographyApp/assets/38860392/6499673f-2cd5-405d-84ff-45d3b3bb5f72" width="15%"/>
+<img src="https://github.com/mustfaunlu/AutobiographyApp/assets/38860392/7df45920-cb29-4677-bb35-8dc7e031b811" width="15%"/>
+<img src="https://github.com/mustfaunlu/AutobiographyApp/assets/38860392/eb142f6b-493d-4495-bbec-d9d864bf2920" width="15%"/>
+</p>
 
 ## Tech stack & Open-source libraries
 - 100% [Kotlin](https://kotlinlang.org/) based + [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) and [Flow](https://developer.android.com/kotlin/flow) & [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
@@ -21,3 +41,7 @@
 ## Architecture
 This app uses [***MVVM (Model View View-Model)***](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) architecture
 ![](https://raw.githubusercontent.com/skydoves/pokedex/main/figure/figure0.png)
+
+
+## App video Portrait (Samsung Galaxy Mega 6.3 API 30)
+<img width="100" height="100" src="https://user-images.githubusercontent.com/38860392/235319884-fd842419-9614-4caf-b8ae-8daca1d9f29a.mp4" />
