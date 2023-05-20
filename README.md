@@ -5,7 +5,7 @@ This application includes an "About Me" section where I provide personal informa
 
 Finally, the last page of the application provides links to my social media accounts, enabling users to connect with me on social media.
 
-Autobiography App was developed using the Kotlin programming language and built using Android Studio. The source code for the project is available on GitHub, allowing any developer to run and modify the project on their own computer.
+Autobiography App was developed using the Kotlin programming language and built using Android Studio. My biographical app  uses offline-first structure, MVVM and repository pattern, along with popular libraries like Retrofit, Glide, and Room. I also leverage technologies such as LiveData, Flow, ViewBinding, and Databinding. The source code for the project is available on GitHub, allowing any developer to run and modify the project on their own computer. 
 
 ## Screeshots
 <p align="center">
